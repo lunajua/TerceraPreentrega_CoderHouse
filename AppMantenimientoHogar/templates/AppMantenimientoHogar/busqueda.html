@@ -2,4 +2,19 @@
 {% load static%}
 {% block contenidoquecambia %}
 
+<h2> Buscador</h2>
+<form action="" method="POST">
+
+    {% csrf_token %}
+    <table>
+       {{form.as_table}}       
+    </table>
+    <br>
+    <button type="submit">Buscar</button>
+</form>
+
+{% for mensaje in mensajes %}
+    <p>{{mensaje.nombre}} {{mensaje.tipo_consulta}} </p>
+{% endfor %}
+
 {% endblock %}

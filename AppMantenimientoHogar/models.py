@@ -51,8 +51,19 @@ class Reparacion(models.Model):
     producto = models.CharField(max_length=20)
     contacto = models.ForeignKey(Contacto, on_delete=models.CASCADE)
     problema = models.TextField()        
-    estado = models.BooleanField(default=False)
-     
+    estado = models.BooleanField(default=False)     
     
     def __str__(self):
         return self.problema
+
+
+class Busqueda(models.Model):
+    nombre = models.CharField(max_length=50)
+    # fecha = models.DateField()
+    # producto = models.CharField(max_length=20)
+    #mail = models.EmailField()
+    
+    def __str__(self):
+        return self.nombre
+
+

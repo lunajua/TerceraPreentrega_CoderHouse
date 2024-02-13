@@ -2,6 +2,8 @@
 {% load static%}
 {% block contenidoquecambia %}
 
+
+
 <h2> Contactenos </h2>
 
 <form action="" method="POST">
@@ -14,5 +16,8 @@
     <br>
     <button type="submit">Enviar</button>
 </form>    
+{% if mensaje %}
+    <p>{{mensaje}}</p>
+{% endif %}
 
 {% endblock %}

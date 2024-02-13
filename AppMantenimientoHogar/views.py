@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import ContactoFormulario
 from .forms import Venta
 from .forms import ReparaFormulario
+from .forms import BuscaForm
+from .models import Contacto
 
 # Create your views here.
 def index(request):
@@ -39,9 +41,6 @@ def venta(request):
             
     return render(request, 'AppMantenimientoHogar/venta.html', data)
 
-def busqueda(request):
-    return render(request, 'AppMantenimientoHogar/busqueda.html')
-
 def reparacion(request):
     
     data = { 
@@ -59,5 +58,30 @@ def reparacion(request):
             
     return render(request, 'AppMantenimientoHogar/reparacion.html', data)
       
+def busqueda(request):
     
+    data = {
+        'form': BuscaForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = BuscaForm(data=request.POST)
+        if formulario.is_valid():
+            info = formulario.cleaned_data
+            mensaje = Contacto.objects.filter(nombre__icontains=info["nombre"])
+            return render(request, 'AppMantenimientoHogar/busqueda.html', {'mensajes': mensaje})
+        else:
+            formulario = BuscaForm()
+    return render(request, 'AppMantenimientoHogar/busqueda.html', data)    
+
+# def busqueda(request):
+#     mensaje = None
+#     formulario = BuscaForm(request.POST or None)
+    
+#     if formulario.is_valid():
+#         info = formulario.cleaned_data
+#         mensaje = Contacto.objects.filter(nombre__in=info["nombre"])
+    
+#     return render(request, 'AppMantenimientoHogar/busqueda.html', {'formulario': formulario, 'mensaje': mensaje})
+
     

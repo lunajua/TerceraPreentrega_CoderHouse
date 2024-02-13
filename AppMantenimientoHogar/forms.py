@@ -2,6 +2,7 @@ from django import forms
 from .models import Contacto
 from .models import Producto
 from .models import Reparacion
+from .models import Busqueda
 
 
 class ContactoFormulario(forms.ModelForm):
@@ -20,3 +21,12 @@ class ReparaFormulario(forms.ModelForm):
     class Meta:
         model = Reparacion
         fields = "__all__"
+
+class BuscaForm(forms.ModelForm):     
+    class Meta:
+        model = Busqueda
+        fields = "__all__"
+       
+    # nombre = forms.CharField(max_length=50)
+    # marca = forms.CharField(max_length=50)
+    # producto = forms.CharField(max_length=50)

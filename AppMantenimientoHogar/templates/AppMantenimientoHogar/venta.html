@@ -19,7 +19,9 @@
     <br>
     <button type="submit">Guardar</button>
 </form>    
-
+{% if mensaje %}
+    <p>{{mensaje}}</p>
+{% endif %}
 
 
 {% endblock %}
