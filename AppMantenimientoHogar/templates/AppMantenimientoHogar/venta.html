@@ -1,5 +1,25 @@
 {% extends 'AppMantenimientoHogar/base.html' %}
 {% load static%}
 {% block contenidoquecambia %}
+<div class="slider">    
+    <div>
+        <img src="{% static 'AppMantenimientoHogar/img/banner/banner3.png' %}" alt="">
+    </div>
+</div>
+
+<h2> Venta de Artículos Mayoritas y Minoristas </h2>
+
+<form action="" method="POST">
+    
+    {% csrf_token %}
+    <table>
+    {{ form.as_table}}
+    </table>
+    
+    <br>
+    <button type="submit">Guardar</button>
+</form>    
+
+
 
 {% endblock %}

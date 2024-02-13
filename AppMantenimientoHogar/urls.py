@@ -1,6 +1,5 @@
 from django.urls import path 
 from AppMantenimientoHogar import views
-from django.contrib import admin
 
 
 urlpatterns = [
@@ -8,6 +7,7 @@ urlpatterns = [
     path('', views.index, name="Index"),        
     path('contacto/', views.contacto, name="Contacto"),
     path('venta/', views.venta, name="Venta"),
-    path('busqueda/', views.busqueda, name="Busqueda")      
+    path('busqueda/', views.busqueda, name="Busqueda"),
+    path('reparacion/', views.reparacion, name="Reparacion")      
 ]
     
