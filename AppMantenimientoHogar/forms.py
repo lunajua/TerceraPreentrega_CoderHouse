@@ -27,6 +27,5 @@ class BuscaForm(forms.ModelForm):
         model = Busqueda
         fields = "__all__"
        
-    # nombre = forms.CharField(max_length=50)
-    # marca = forms.CharField(max_length=50)
-    # producto = forms.CharField(max_length=50)
+    
+
