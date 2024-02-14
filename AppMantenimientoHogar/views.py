@@ -74,14 +74,11 @@ def busqueda(request):
             formulario = BuscaForm()
     return render(request, 'AppMantenimientoHogar/busqueda.html', data)    
 
-# def busqueda(request):
-#     mensaje = None
-#     formulario = BuscaForm(request.POST or None)
-    
-#     if formulario.is_valid():
-#         info = formulario.cleaned_data
-#         mensaje = Contacto.objects.filter(nombre__in=info["nombre"])
-    
-#     return render(request, 'AppMantenimientoHogar/busqueda.html', {'formulario': formulario, 'mensaje': mensaje})
+
+
+
+
+
+
 
     

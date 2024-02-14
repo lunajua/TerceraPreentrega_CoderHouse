@@ -1,19 +1,35 @@
 {% extends 'AppMantenimientoHogar/base.html' %}
 {% load static%}
 {% block contenidoquecambia %}
-<h2> Buscador</h2>
+{% load crispy_forms_tags %}
+<br>
+<br>
+<div class="clas-row">
+    <div class="col-12 col-md-6.offset-md-3">
+        <div class="card-body">
+            <h2> Buscador</h2>
 <form action="" method="POST">
     {% csrf_token %}
     <table>
        {{form.as_table}}       
     </table>
     <br>
-    <button type="submit">Buscar</button>
+    <button type="reset" value="Reset" class="btn btn-secondary">Limpiar</button>
+        &nbsp;
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    
 </form>
 
 {% for mensaje in mensajes %}
     <p>{{mensaje.nombre}} {{mensaje.tipo_consulta}} </p>    
 {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
 
